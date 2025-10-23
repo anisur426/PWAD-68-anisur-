@@ -6,9 +6,16 @@
     <title>Document</title>
 </head>
 <body>
-    <p>Welcome to PHP</p>
     <?php
-    print" hello world"
+    $x=15;
+    if ($x%2==0){
+        echo $x. "it is a even numbr";
+
+    }
+    else{
+        echo$x."it is odd number";
+    } 
+
     ?>
 </body>
 </html>
