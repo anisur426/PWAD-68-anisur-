@@ -8,15 +8,9 @@
 </head>
 
 <body>
+    <h2>test</h2>
     <?php
-
-    $num1 = 10;
-    $num2 = 12;
-    $num3 = 15;
-
-    $largest = max($num1, $num2, $num3);
-    echo "largest number is :$largest";
-
+    phpinfo();
     ?>
 </body>
 
