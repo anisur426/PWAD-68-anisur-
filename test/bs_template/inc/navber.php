@@ -1,5 +1,8 @@
 <?php
 $current_page = basename($_SERVER["PHP_SELF"]);
+// $current_page = $_SERVER["PHP_SELF"];
+
+// echo $current_page
 ?>
 
 
@@ -11,14 +14,14 @@ $current_page = basename($_SERVER["PHP_SELF"]);
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" <?php if ($current_page == "index.php") echo "active"; ?> href="#">Home</a>
+                <a class="nav-link <?php if ($current_page == "index.php") echo "active"; ?>   " href="index.php">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" <?php if ($current_page == "about.php") echo "active"; ?> href="#">About</a>
+                <a class="nav-link <?php if ($current_page == "about.php") echo "active"; ?>  " href="about.phpp">About</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">
-                    <a class="nav-link" <?php if ($current_page == "contact.php") echo "activ"; ?> href="#">Contact</a>
+                    <a class="nav-link <?php if ($current_page == "contact.php") echo "activ"; ?>  " href="contact.php">Contact</a>
             </li>
 
         </ul>
