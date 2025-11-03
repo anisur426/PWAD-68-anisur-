@@ -46,7 +46,8 @@
 
     <!-- Navbar start -->
 
-    <? include("inc/navber.php"); ?>
+    <?php include("inc/navber.php"); ?>
+    
     <!-- Navbar End -->
 
 
@@ -119,7 +120,7 @@
         </div>
     </div>
     <!-- Modal Video -->
-    <? include("inc/video.php") ?>
+    <?php include("inc/video.php") ?>
     <!-- About End -->
 
 

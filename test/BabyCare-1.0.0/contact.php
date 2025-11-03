@@ -42,7 +42,7 @@
 
 
     <!-- Navbar start -->
-    <? include("inc/navber.php"); ?>
+    <?php include("inc/navber.php"); ?>
     <!-- Navbar End -->
 
 
@@ -143,7 +143,7 @@
 
 
     <!-- Footer Start -->
-    <? ("inc/footer.php"); ?>
+    <?php ("inc/footer.php"); ?>
     <!-- Footer End -->
 
 
