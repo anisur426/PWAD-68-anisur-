@@ -20,12 +20,12 @@
 <body>
     <form action="" name="anis" method="POST">
         <lavel for="">Your Name : </lavel><br>
-        <input type="text" name="Name" value="<?php if (!isset($_POST['Name'])) {
+        <input type="text" name="Name" value="<?php if (isset($_POST['Name'])) {
                                                     echo $_POST['Name'];
                                                 } ?>"><br>
         <br>
         <lavel for="">Email : </lavel><br>
-        <input type="text" name="Email" value="<?php if (!isset($_POST['Email']) || $_POST['Email'] == "") {
+        <input type="text" name="Email" value="<?php if (isset($_POST['Email'])) {
                                                     echo $_POST['Email'];
                                                 } ?>"><br>
         <br>

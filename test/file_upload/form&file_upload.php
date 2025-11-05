@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <form action="" name="anis" method="POST">
         <label for="">Your Name : </label><br>
@@ -33,26 +35,22 @@
         <input type="checkbox" name="languages[]" value="php">php<br>
         <input type="checkbox" name="languages[]" value="python">python<br>
         <input type="checkbox" name="languages[]" value="java">java<br>
-    </select>
+        </select>
         <br>
-         <input type="file" name="newfile">
+        <input type="file" name="newfile">
         <input type="submit" value="upload" name="upload"><br>
         <input type="submit" name="submit" value="submit"><br>
 
     </form>
     <?php
     if (isset($_POST['upload'])) {
-        //echo "<pre>";
-        // print_r($_FILES);
-         //echo "<br>";
-        // echo $_FILES['myfile']['size'];
-        // echo "<br>";
+
         $filename = $_FILES['myfile']['name'];
         $destination = "files/" . $filename;
-       
+
         $temfile = $_FILES['myfile']['tmp_name'];
-        $filsize = $_FILES['myfile']['size']; //byte
-        $maxsize = 1048576; //1mb;
+        $filsize = $_FILES['myfile']['size'];
+        $maxsize = 524288;
         $errors = array();
         echo $ext = pathinfo($filename, PATHINFO_EXTENSION);
         $allowed = ["jpg", "jpeg", "png"];
@@ -90,43 +88,37 @@
                 $email[] = "email is not valid";
             }
         }
-        //skill
-        
+
+
         if (isset($_POST["languages"])) {
-    $langs = $_POST["languages"];
-    $lastlangkey = array_key_last($langs);
+            $langs = $_POST["languages"];
+            $lastlangkey = array_key_last($langs);
 
-    foreach ($langs as $key => $lang) {
-        if ($key == $lastlangkey) {
-            $langs_output .= $lang;
+            foreach ($langs as $key => $lang) {
+                if ($key == $lastlangkey) {
+                    $langs_output .= $lang;
+                } else {
+                    $langs_output .= $lang . ", ";
+                }
+            }
         } else {
-            $langs_output .= $lang . ", ";
+            $errors[] = "Select at least one language";
         }
-    }
-} else {
-    $errors[] = "Select at least one language";
-}
 
 
-        // echo "<pre>";
-        //print_r($_REQUEST);
-        //echo "Skills:";
-        //print_r($_REQUEST["Skills"]);
-        //echo"want to larne:";
-        // print_r($_REQUEST['languages']);
         if (count($erroes) > 0) {
-    echo "<ul>";
-    foreach ($erroes as $err) {
-        echo "<li>" . $err . "</li>";
-    }
-    echo "</ul>";
-} else {
-    move_uploaded_file($temfile, $destination);
-    echo "<h1> upload successfully</h1>";
-}
+            echo "<ul>";
+            foreach ($erroes as $err) {
+                echo "<li>" . $err . "</li>";
+            }
+            echo "</ul>";
+        } else {
+            move_uploaded_file($temfile, $destination);
+            echo "<h1> upload successfully</h1>";
+        }
 
-?>
-    <table>
+    ?>
+        <table>
             <tr>
                 <td>Name:</td>
                 <td><?php echo $name; ?></td>
@@ -146,7 +138,8 @@
         </table>
     <?php
     }
-    
+
     ?>
 </body>
+
 </html>
