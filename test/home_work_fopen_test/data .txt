@@ -1,0 +1,6 @@
+
+Shirt price=1200Tk xl.
+T-Shirt price=800Tk xl.
+Pant price=1500Tk xl.
+Haf-pant price=600Tk xl.
+

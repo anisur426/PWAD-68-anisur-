@@ -13,7 +13,7 @@
     if (isset($_POST["search"])) {
         $stid = $_POST["student_id"];
         include("result_class.php");
-        $sheet = new student("./result_search/result_sheet.txt");
+        $sheet = new student("./result_sheet.txt");
         $result = $sheet->result($stid);
         echo $result;
     }
