@@ -9,7 +9,7 @@ class student
 
     function __construct($file)
     {
-        $this->file = $file;
+        $this->file = $file; // = "./result_sheet.txt"
     }
     function result($fid)
     {
@@ -22,4 +22,3 @@ class student
         }
     }
 }
-?>
