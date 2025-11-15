@@ -7,10 +7,7 @@
     echo "Hello world!<br>";
     echo "I'm about to learn PHP!<br>";
     print "This ";
-    "string ";
-    "was ";
-    "made ";
-    "with multiple parameters";
+   
     ?>
 
 
