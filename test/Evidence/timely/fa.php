@@ -6,20 +6,23 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="post">
-        <label for="">Enter Number:</label>
-        <input type="number" name="num"><br>
-        <input type="submit" name="submit" value="Check">
-    </form>
-    <?php 
-    if (isset($_POST["submit"])){
-        $num=$_POST["num"];
-        $fact=1;
-        for($i=$num;$i>=1;$i--){
-            $fact=$fact*$i;
-        }
-        echo "factorial is : $fact";
-    }
-    ?>
+
+<form  action="" method="post">
+  <input type="number" name="num" placeholder="Enter your number"><br>
+
+  <input type="submit" name="submit" value="Check">
+</form>
+<?php
+if(isset($_POST['submit'])){
+  $num=$_POST['num'];
+  $fact=1;
+ $number= range(1,$num);
+  foreach ($number as $n){
+    $fact *=$n;
+
+  }
+  echo $fact;
+}
+?>
 </body>
 </html>
