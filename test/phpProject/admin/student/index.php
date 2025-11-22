@@ -1,4 +1,4 @@
-<?php include_once("../inc/db_config.php"); ?>
+0<?php include_once("../inc/db_config.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
