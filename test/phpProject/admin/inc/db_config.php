@@ -11,7 +11,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-
+ob_start();
 //echo "Connection successful!";
 
 $control_URL = "http://localhost/PWAD-68(anis)/test/phpProject/admin/";
