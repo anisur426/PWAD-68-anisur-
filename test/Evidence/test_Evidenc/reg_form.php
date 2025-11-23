@@ -10,7 +10,7 @@
 <body>
     <h1>Registration</h1>
     <form action="" method="post">
-        <input type="number" name="Id" id="id">
+        <input type="number" name="id" placeholder="Enter your roll">
         <input type="submit" name="search" value="search">
 
     </form>

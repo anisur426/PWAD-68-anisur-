@@ -10,6 +10,11 @@
 <body>
     <h1>File Upload PHP</h1>
 
+    <form action="" method="post" enctype="multipart/form-data">
+        <input type="file" name="myfile">
+        <input type="submit" name="upload" value="Upload">
+    </form>
+
     <?php
     if (isset($_POST['upload'])) {
         //echo "<pre>";
@@ -44,10 +49,6 @@
     }
     ?>
 
-    <form action="" method="post" enctype="multipart/form-data">
-        <input type="file" name="myfile">
-        <input type="submit" value="Upload" name="upload">
-    </form>
 </body>
 
 </html>
