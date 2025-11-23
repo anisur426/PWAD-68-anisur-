@@ -6,4 +6,4 @@ $sum=0;
     $sum+=$array[$array[$i]];
  }
  echo $sum;
-?>
+?>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              

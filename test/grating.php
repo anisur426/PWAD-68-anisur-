@@ -7,16 +7,25 @@
 </head>
 <body>
     <?php 
-    $Point=100;
-    if($Point>=80){
-        echo" A+";
-    }elseif($Point>=70)
-    {
-  echo "A";
-    }
-    elseif($Point>=60){
-        echo"A-";
-    }
+  $Marks=100;
+  if($Marks>=80){
+    echo "Excellent";
+
+  }
+  elseif($Marks>=70){
+    echo "Good";
+  }
+  elseif($Marks>=60){
+    echo "fair";
+
+  }
+  elseif($Marks>=50){
+    echo "poor";
+
+  }
+  else{
+    echo "failure";
+  }
     ?>
 </body>
 </html>
