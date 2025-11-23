@@ -14,12 +14,12 @@
     if (isset($_POST['upload'])) {
         //echo "<pre>";
         // print_r($_FILES);
-         //echo "<br>";
+        //echo "<br>";
         // echo $_FILES['myfile']['size'];
         // echo "<br>";
         $filename = $_FILES['myfile']['name'];
         $destination = "files/" . $filename;
-       
+
         $temfile = $_FILES['myfile']['tmp_name'];
         $filsize = $_FILES['myfile']['size']; //byte
         $maxsize = 1048576; //1mb;
@@ -28,10 +28,10 @@
         $allowed = ["jpg", "jpeg", "png"];
 
         if ($filsize > $maxsize) {
-            $errors[] = "<h1>file is too large</h>";
+            $errors[] = "<h>file is too large</h>";
         }
         if (! in_array($ext, $allowed)) {
-            $errors[] = "<h1>  jpg,png and jpeg is allowed </h1>";
+            $errors[] = "<h>  jpg,png and jpeg is allowed </h>";
         }
         if (count($errors) > 0) {
             foreach ($errors as $error) {
@@ -39,7 +39,7 @@
             }
         } else {
             move_uploaded_file($temfile, $destination);
-            echo "<h1> upload successfully</h1>";
+            echo "<h> upload successfully</h>";
         }
     }
     ?>
