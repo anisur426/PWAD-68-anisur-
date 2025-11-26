@@ -1,4 +1,9 @@
-<?php include("../inc/db_config.php") ?>
+<?php include("../inc/db_config.php");
+session_start();
+if (isset($_SESSION['loggedin'])){
+  header("Location:index.php");
+}
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,12 +57,12 @@
           <div class="row">
             <!-- left column -->
             <div class="col-md-12">
-              <!-- jquery validation -->
-
+              
 
               <?php
               if (isset($_POST['submit'])) {
                 extract($_POST);
+<<<<<<< HEAD
 
                 if ($_POST['photo'] != "") {
 
@@ -70,15 +75,29 @@
 
 
                 $$sql = "INSERT INTO employees (Fname,Lname,dob,notes)VALUES(NULL,'$first_anme','$last_name','$birth_date','$note','$fullpath')";
+=======
+                if (isset($_FILES['photo'])){
+                  $photo_name =$_FILES['photo']['name'];
+                  $tmp_name = $_FILES['photo']['tmp_name'];
+                  $upload_path="students/uploads/";
+                  $fullpath =$upload_path .$photo_name;
+                  move_uploaded_file($tem_name,"uploads/" .$phpto_name);
+
+
+                }
+                $sql = "INSERT INTO employees (Fname,Lname,dob,notes)VALUES(NULL,'$first_anme','$last_name','$birth_date','$note','$fullpath')";
+>>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
                 $conn->query($sql);
                 if ($conn->affected_rows) {
                   echo '<div class ="alert alert-success"> succesfully inserted</div>';
                 }
               }
               ?>
+              <!-- jquery validation -->
+
               <div class="card card-primary">
                 <div class="card-header">
-                  <h3 class="card-title">Add student</small></h3>
+                  <h3 class="card-title">Add New student</small></h3>
 
                 </div>
                 <!-- /.card-header -->
@@ -95,12 +114,17 @@
                     </div>
                     <div class="form-group">
                       <label>dob</label>
-                      <input type="text" name="birth_date" class="form-control" id="exampleInputEmail1" placeholder="Enter Lname">
+                      <input type="text" name="birth_date" class="form-control" id="exampleInputEmail1" >
                     </div>
                     <div class="form-group">
                       <label>notes</label>
-                      <input type="text" name="note" class="form-control" id="exampleInputEmail1" placeholder="Enter Lname">
+                      <input type="text" name="note" class="form-control" id="exampleInputEmail1" placeholder="Enter your self">
                     </div>
+                    <div class="form-group">
+                      <label>Photo</label>
+                      <input type="file" name="photo" class="form-control" id="exampleInputEmail1" >
+                    </div>
+<<<<<<< HEAD
                     <div class="form-group">
                       <label>Photo</label>
                       <input type="text" name="phpto" class="form-control" id="exampleInputEmail1" placeholder="Enter Lname">
@@ -110,6 +134,8 @@
 
 
 
+=======
+>>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
 
                     <!-- /.card-body -->
                     <div class="card-footer">

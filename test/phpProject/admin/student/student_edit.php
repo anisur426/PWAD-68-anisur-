@@ -1,6 +1,10 @@
 <?php include("../inc/db_config.php");
 session_start();
+<<<<<<< HEAD
 if (!isset($_SESSION['logggedin'])) {
+=======
+if (!isset($_SESSION['loggdin'])){
+>>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
   header("Location:index.php");
 }
 
@@ -45,42 +49,30 @@ if (!isset($_SESSION['logggedin'])) {
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Student Edit</li>
+                <li class="breadcrumb-item active">Edit Page</li>
               </ol>
             </div>
           </div>
         </div><!-- /.container-fluid -->
       </section>
-      <!-- one student record -->
-      <?php
-      $id = $_REQUEST['stid'];
-      $sql = "SELECT * FROM employees WHERE employeeID='$id'";
-      $rowdata = $conn->query($sql);
-      $row = $rowdata->fetch_assoc();
-
-      //print_r($row)
-      ?>
+     
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
           <div class="row">
             <!-- left column -->
             <div class="col-md-12">
-              <!-- jquery validation -->
-              <?php
-              if (isset($_POST['update'])) {
-                extract($_POST);
-                $sql = "UPDATE employees SET first_name='$first_name', last_name='$last_name',birthdate='$birth_date',notes='$note' WHERE employeeID='$id'";
+               <!-- one student record -->
+      <?php
+      $id = $_REQUEST['stid'];
+      $sql = "SELECT * FROM employees WHERE employeeID='$id'";
+      $rowdata = $conn->query($sql);
+      $row = $rowdata->fetch_object();
 
-                $conn->query($sql);
-                if ($conn->affected_rows); {
-                  $_SESSION['msg'] = "update succesfully";
-                  header("Location: index.php");
-                  // echo '<div class ="alert alert-success"> succesfully inserted</div>';
-
-                }
-              }
-              ?>
+      //print_r($row)
+      ?>
+            <!-- jquery validation -->
+           
               <div class="card card-primary">
                 <div class="card-header">
                   <h3 class="card-title">Add student</small></h3>
@@ -110,6 +102,22 @@ if (!isset($_SESSION['logggedin'])) {
                     <div class="card-footer">
                       <button type="submit" name="update" class="btn btn-primary">Update</button>
                     </div>
+                       <?php
+              if (isset($_POST['update'])) {
+                extract($_POST);
+                $sql = "UPDATE employees SET first_name='$first_name', last_name='$last_name',birthdate='$birth_date',notes='$note' WHERE employeeID='$id'";
+
+                $conn->query($sql);
+                if ($conn->affected_rows); {
+                  session_start();
+                  $_SESSION['msg'] = "update succesfully";
+                  header("Location: index.php");
+                  // echo '<div class ="alert alert-success"> succesfully inserted</div>';
+
+                }
+              }
+              $conn->close();
+              ?>
                 </form>
               </div>
               <!-- /.card -->
@@ -194,7 +202,7 @@ if (!isset($_SESSION['logggedin'])) {
       });
     });
   </script>
-            -->
+         <--   -->
 </body>
 
 </html>
