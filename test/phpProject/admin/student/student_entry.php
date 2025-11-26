@@ -58,7 +58,18 @@
               <?php
               if (isset($_POST['submit'])) {
                 extract($_POST);
-                $sql = "INSERT INTO employees (Fname,Lname,dob,notes)VALUES(NULL,'$first_anme','$last_name','$birth_date','$note')";
+
+                if ($_POST['photo'] != "") {
+
+                  $photo_name = $_FILES['photo']['name'];
+                  $tmp_name = $_FILES['photo']['tem_name'];
+                  $upload_path = "student/upload";
+                  $fullpath = $upload_path . $photo_name;
+                  move_uploaded_file($tmp_name, $fullpath, "upload/" . $photo_name);
+                }
+
+
+                $$sql = "INSERT INTO employees (Fname,Lname,dob,notes)VALUES(NULL,'$first_anme','$last_name','$birth_date','$note','$fullpath')";
                 $conn->query($sql);
                 if ($conn->affected_rows) {
                   echo '<div class ="alert alert-success"> succesfully inserted</div>';
@@ -72,7 +83,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form id="quickForm" action="" method="post">
+                <form id="quickForm" action="" method="post" enctype="multipart/form-data">
                   <div class="card-body">
                     <div class="form-group">
                       <label>Fname</label>
@@ -90,6 +101,11 @@
                       <label>notes</label>
                       <input type="text" name="note" class="form-control" id="exampleInputEmail1" placeholder="Enter Lname">
                     </div>
+                    <div class="form-group">
+                      <label>Photo</label>
+                      <input type="text" name="phpto" class="form-control" id="exampleInputEmail1" placeholder="Enter Lname">
+                    </div>
+
 
 
 
