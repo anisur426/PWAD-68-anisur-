@@ -1,3 +1,4 @@
+<?php include_once('db_config.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,16 +17,7 @@
         }
     </style>
 </head>
-<?php
-$host = "localhost";
-$user = "root";
-$password = "";
-$db = "company";
-$db = new mysqli($host, $user, $password, $db);
-if ($db->connect_error) {
-    die("connection failed:" . $db->connect_error);
-}
-?>
+
 
 <body>
     <div>
@@ -83,6 +75,8 @@ if ($db->connect_error) {
             </tr>
         <?php endwhile; ?>
     </table>
+    <br><br>
+    <a href="product.php"><h2>Show product list</h2></a>
 </body>
 
 </html>
