@@ -1,0 +1,9 @@
+Date:  09-11-2022
+
+Version: 1.0.1
+
+===================
+
+01. Bootstrap framework update - v5.0.2 to v5.2.2.
+02. Minor JS issues have been fixed
+
