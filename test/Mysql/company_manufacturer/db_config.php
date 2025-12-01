@@ -2,9 +2,9 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$db = "company";
-$db = new mysqli($host, $user, $password, $db);
-if ($db->connect_error) {
-    die("connection failed:" . $db->connect_error);
+$database = "company";
+$db= new mysqli($host, $user, $password, $database);
+if ($conn->connect_error) {
+    die("connection failed:" . $conn->connect_error);
 }
 ?>

@@ -29,7 +29,7 @@
             </tr>
             <?php
             $sql = "SELECT * FROM product_list";
-            $rawData = $db->query($sql);
+            $rawData =$conn->query($sql);
             while ($row = $rawData->fetch_assoc()):
             ?>
                 <tr>

@@ -1,4 +1,13 @@
-<?php include_once('db_config.php'); ?>
+<?php
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "company";
+$db= new mysqli($host, $user, $password, $database);
+if ($db->connect_error) {
+    die("connection failed:" . $db->connect_error);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +24,14 @@
             border-collapse: collapse;
             text-align: center;
         }
+        .data{
+            float:left;
+            margin-left: 25px;
+        }
+        iframe{
+            float: left;
+            margin-left: 25px;
+        }
     </style>
 </head>
 
@@ -26,7 +43,7 @@
     <br> <br>
     <form action="" method="post">
         <label>Name:</label>
-        <input type="next" name="name" placeholder="enter your name"> <br><br>
+        <input type="text" name="name" placeholder="enter your name"> <br><br>
         <label>Address:</label>
         <textarea name="address" cols="15" rows="3"></textarea><br><br>
 
@@ -37,10 +54,11 @@
 
     </form>
     <?php
-    if (isset($_POST['submit'])) {
-        $name = $_POST['name'];
-        $address = $_POST['address'];
-        $contact_no = $_POST['contact_no'];
+    if (isset($_REQUEST['submit'])) {
+        //$name = $_POST['name'];
+       // $address = $_POST['address'];
+       // $contact_no = $_POST['contact_no'];
+       extract($_REQUEST);
         $sql = "CALL Manufacturer_insert ('$name','$address','$contact_no')";
         $db->query($sql);
         if ($db->affected_rows) {
@@ -53,10 +71,10 @@
     <h2>Carunt Manufacturer</h2>
     <table>
         <tr>
-            <th>Manufacturee ID</th>
+            <th>Id</th>
             <th>Name</th>
             <th>Address</th>
-            <th>contact_no</th>
+            <th>Contact_no</th>
 
             <th>action</th>
         </tr>
@@ -76,7 +94,13 @@
         <?php endwhile; ?>
     </table>
     <br><br>
-    <a href="product.php"><h2>Show product list</h2></a>
+    
+    <a href="product_list.php"><h2>Show product list</h2></a>
+
+
+    <iframe src="product_list.php" frameborder="0" style="width: 500px; height: 300px;"></iframe>
+     <iframe src="product_View_list.php" frameborder="0" style="width: 500px; height: 300px;"></iframe>
+    
 </body>
 
 </html>
