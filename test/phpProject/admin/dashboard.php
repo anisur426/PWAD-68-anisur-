@@ -1,13 +1,8 @@
-<<<<<<< HEAD
+
 <!-- aita index a thakbe -->
 <?php
 session_start();
-?>
 
-<!--aita dashboard er -->
-
-=======
-<?php
 session_start();
 if (isset($_SESSION['logggedin'])){
   header("Location:index.php");
@@ -16,23 +11,22 @@ if (isset($_SESSION['logggedin'])){
 <?php 
 include_once("inc/db_config.php");
 ?>
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-<<<<<<< HEAD
-  <title>AdminLTE 3 | DataTables</title>
-=======
+
+
   <title>AdminLTE 3 | Dashboard</title>
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-<<<<<<< HEAD
+
   <link rel="stylesheet" href="<?php echo $control_URL ?>plugins/fontawesome-free/css/all.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?php echo $control_URL ?>plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
@@ -76,12 +70,12 @@ include_once("inc/db_config.php");
 
     <!-- Navbar -->
     <?php include('inc/nvber.php') ?>
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
     <?php include("inc/leftber.php") ?>
-<<<<<<< HEAD
+
     <!-- Main Sidebar Container -->
 
     <!-- Content Wrapper. Contains page content -->
@@ -122,12 +116,12 @@ include_once("inc/db_config.php");
         </div><!-- /.container-fluid -->
       </div>
       <!-- /.content-header -->
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
 
       <!-- Main content -->
       <section class="content">
         <div class="container-fluid">
-<<<<<<< HEAD
+
           <div class="row">
             <div class="col-12">
 
@@ -338,12 +332,11 @@ include_once("inc/db_config.php");
     <!-- Control sidebar content goes here -->
   </aside>
   <!-- /.control-sidebar -->
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
   </div>
   <!-- ./wrapper -->
 
   <!-- jQuery -->
-<<<<<<< HEAD
   <script src="<?php echo $control_URL ?>plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?php echo $control_URL ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -418,7 +411,7 @@ include_once("inc/db_config.php");
   <script src="dist/js/demo.js"></script>
   <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="dist/js/pages/dashboard.js"></script>
->>>>>>> 8cb1aba2d7e2d9232c63ea4df69a8546ad61b790
+
 </body>
 
 </html>
