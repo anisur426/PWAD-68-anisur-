@@ -59,7 +59,7 @@ if ($db->connect_error) {
        // $address = $_POST['address'];
        // $contact_no = $_POST['contact_no'];
        extract($_REQUEST);
-        $sql = "CALL Manufacturer_insert ('$name','$address','$contact_no')";
+        $sql = "CALL product_view ('$name','$address','$contact_no')";
         $db->query($sql);
         if ($db->affected_rows) {
             echo "<h4>Manufacturer Add Sfuccessfully</h4>";
