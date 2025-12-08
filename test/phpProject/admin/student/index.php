@@ -1,5 +1,5 @@
-<?php 
-include_once("../inc/db_config.php");
+<?php
+include_once("inc/db_config.php");
 session_start();
 ?>
 <!DOCTYPE html>
@@ -25,13 +25,13 @@ session_start();
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
     <!-- Navbar -->
-    <?php include("../inc/top_navber.php") ?>
+    <?php include("../inc/nvber.php") ?>
     <!-- /.navbar -->
 
     <!-- Main Sidebar Container -->
-   <?php
-   include("../inc/leftber.php") 
-   ?>
+    <?php
+    include("../inc/leftber.php")
+    ?>
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -93,20 +93,20 @@ session_start();
                       while ($row = $rawdata->fetch_object()) :
                       ?>
 
-                          <tr>
-                            <td><?php echo $row->employeeID ?></td>
-                            <td><?php echo $row->first_name ?></td>
-                            <td><?php echo $row->last_name ?></td>
+                        <tr>
+                          <td><?php echo $row->employeeID ?></td>
+                          <td><?php echo $row->first_name ?></td>
+                          <td><?php echo $row->last_name ?></td>
 
-                            <td><?php echo $row->birthdate ?></td>
+                          <td><?php echo $row->birthdate ?></td>
 
-                            <td class="text-center">
-                              <a href="student_edit.php?stid=<?php echo $row->employeeID; ?>"> <i class="fas fa-edit"></i></a>
-                              &nbsp;
-                              <a onclick="return('are you sure to delete?')" href="student_delete.php?stid=<?php echo $row->employeeID; ?>"> <i class="fas fa-trash"></i></a>
+                          <td class="text-center">
+                            <a href="student_edit.php?stid=<?php echo $row->employeeID; ?>"> <i class="fas fa-edit"></i></a>
+                            &nbsp;
+                            <a onclick="return('are you sure to delete?')" href="student_delete.php?stid=<?php echo $row->employeeID; ?>"> <i class="fas fa-trash"></i></a>
 
-                            </td>
-                          </tr>
+                          </td>
+                        </tr>
                       <?php endwhile ?>
 
                     </tbody>
@@ -135,7 +135,7 @@ session_start();
       <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
-    <?php include("../inc/footer.php");?>
+    <?php include("../inc/footer.php"); ?>
     <!-- Control Sidebar -->
     <aside class="control-sidebar control-sidebar-dark">
       <!-- Control sidebar content goes here -->

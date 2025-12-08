@@ -1,6 +1,6 @@
 <?php
 include_once("inc/db_config.php");
-session_start();
+
 if (isset($_SESSION['logggedin'])) {
     header("Location:index.php");
 }
